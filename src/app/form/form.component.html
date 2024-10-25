@@ -1,0 +1,24 @@
+<div>
+    <h1>Reactive Formssssss</h1>
+    <form [formGroup] = 'userForm' (ngSubmit) = 'onSubmit()'>
+        <div>
+            <label for = "name">Name : </label>
+            <input id = "name" formControlName = "name">
+            <div *ngIf = "userForm.controls['name'].invalid && userForm.controls['name'].touched">
+                Name should have 3 min characters
+            </div>
+        </div>
+        <div>
+            <label for = "email">Email : </label>
+            <input id = "email" formControlName = "email">
+            <div *ngIf = "userForm.controls['email'].invalid && userForm.controls['email'].touched">
+                Please enter valid email
+            </div>
+        </div>
+        <div>
+            <label for="age">Age : </label>
+            <input id="age" formControlName="age" type="number" />
+        </div>
+        <button type="submit" [disabled]="userForm.invalid">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,14 @@
+<div>
+    <h2>User Management</h2>
+    <input [(ngModel)]="newUser" placeholder="Enter user name">
+    <button (click)="addUser(newUser)">Add User</button>
+  
+    <ul *ngIf="hasUsers(); else noUser">
+      <li *ngFor="let user of users">{{ user.name }}</li>
+    </ul>
+
+    <ng-template #noUser>
+        <p>No users available!</p>
+    </ng-template>
+</div>
+  
