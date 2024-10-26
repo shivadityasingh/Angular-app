@@ -15,6 +15,9 @@ import { ObservablesComponent } from './observables/observables.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInceptorService } from './interceptor/auth-inceptor.service';
 import { SubjectBehaviorComponent } from './subject-behavior/subject-behavior.component';
+import { CountersComponent } from './counters/counters.component';
+import { StoreModule } from '@ngrx/store';
+import { _counterReducer } from './counters/counters.reducers';
 
 @NgModule({
   declarations: [
@@ -25,13 +28,15 @@ import { SubjectBehaviorComponent } from './subject-behavior/subject-behavior.co
     TaskComponent,
     FormComponent,
     ObservablesComponent,
-    SubjectBehaviorComponent
+    SubjectBehaviorComponent,
+    CountersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule  ],
+    ReactiveFormsModule,
+    StoreModule.forRoot({count : _counterReducer})  ],
   providers: [
     provideClientHydration(),
     provideHttpClient(),

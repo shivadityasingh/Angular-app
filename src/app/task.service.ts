@@ -7,7 +7,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class TaskService {
 
   private taskSubject = new BehaviorSubject<string[]>([]);
-  tasks$ : Observable<string[]> = this.taskSubject.asObservable();
+  tasks$ : Observable<string[]> = this.taskSubject;
 
   getTasks() : string[] {
    return this.taskSubject.getValue();

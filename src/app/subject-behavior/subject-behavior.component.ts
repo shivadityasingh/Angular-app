@@ -13,12 +13,12 @@ export class SubjectBehaviorComponent {
   const behaviorSubject : BehaviorSubject<number> = new BehaviorSubject<number>(0);
   const replaySubject : ReplaySubject<number> = new ReplaySubject<number>(2);
   //subject.next(0);
-  replaySubject.next(0);
   replaySubject.next(1);
+  replaySubject.next(2);
   //subject.subscribe((value) => console.log(`Subscribed to Subject ${value}`));
   //behaviorSubject.subscribe((value) => console.log(`Subscribed to Behavior Subject ${value}`));
   replaySubject.subscribe((value) => console.log(`Subscribed to Subject ${value}`));
-  replaySubject.next(2);
+  replaySubject.next(3);
   //subject.next(1);
   //subject.next(2);
   //behaviorSubject.next(1);

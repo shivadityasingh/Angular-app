@@ -11,18 +11,16 @@ interface User{
   styleUrl: './user.component.css'
 })
 export class UserComponent {
-    _userService : UserService;
     users : User[] = [];
     newUser : string = '';
 
     constructor(private userService : UserService)
     {
-      this._userService = userService;
     }
     addUser(newUser : string)
     {
-      this._userService.addUser(newUser);
-      this.users = this._userService.getUsers();
+      this.userService.addUser(newUser);
+      this.users = this.userService.getUsers();
       this.newUser = '';
     }
 
